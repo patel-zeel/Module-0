@@ -26,12 +26,7 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a set of commands using the runners shell
-      - name: fast-pytest
+      - name: GitHub Action for pytest
         # You may pin to the exact commit or the version.
-        # uses: paolorechia/fast-pytest-github-action@3d3b1cccb10a42cc45ccd9a4865e194178c3fa4d
-        uses: paolorechia/fast-pytest-github-action@v1.0
-        with:
-          # Args passed to pytest, provided as string
-          pytest_args: -v
-          # Requirements file to install test dependencies
-          requirements_file: requirements.txt 
+        # uses: cclauss/GitHub-Action-for-pytest@5863d02de95f37516a732802fa6257dfdf93e54c
+        uses: cclauss/GitHub-Action-for-pytest@0.5.0
