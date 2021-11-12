@@ -105,7 +105,11 @@ def test_sigmoid(a):
     * it is  strictly increasing.
     """
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    # raise NotImplementedError('Need to implement for Task 0.2')
+    assert 0 <= sigmoid(a) <= 1
+    assert_close(1.0 - sigmoid(a), sigmoid(-a))
+    assert sigmoid(0.0) == 0.5
+    assert sigmoid(a) >= sigmoid(a - 1)
 
 
 @pytest.mark.task0_2
@@ -113,7 +117,10 @@ def test_sigmoid(a):
 def test_transitive(a, b, c):
     "Test the transitive property of less-than (a < b and b < c implies a < c)"
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    # raise NotImplementedError("Need to implement for Task 0.2")
+    # write your code here
+    if max(a, b) == b and max(b, c) == c:
+        assert max(a, c) == c
 
 
 @pytest.mark.task0_2
@@ -124,7 +131,8 @@ def test_symmetric():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    # raise NotImplementedError("Need to implement for Task 0.2")
+    assert mul(2.0, 3.0) == mul(3.0, 2.0)
 
 
 @pytest.mark.task0_2
@@ -135,7 +143,8 @@ def test_distribute():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    # raise NotImplementedError("Need to implement for Task 0.2")
+    assert_close(mul(2.0, add(3.0, 4.0)), mul(2.0, 3.0) + mul(2.0, 4.0))
 
 
 @pytest.mark.task0_2
@@ -145,7 +154,7 @@ def test_other():
     """
     None
     # TODO: Implement for Task 0.2.
-    raise NotImplementedError('Need to implement for Task 0.2')
+    assert_close(mul(2.0, mul(3.0, 4.0)), mul(mul(2.0, 3.0), 4.0))
 
 
 # ## Task 0.3  - Higher-order functions
@@ -174,7 +183,8 @@ def test_sum_distribute(ls1, ls2):
     is the same as the sum of each element of `ls1` plus each element of `ls2`.
     """
     # TODO: Implement for Task 0.3.
-    raise NotImplementedError('Need to implement for Task 0.3')
+    # raise NotImplementedError("Need to implement for Task 0.3")
+    assert_close(sum(addLists(ls1, ls2)), sum(ls2) + sum(ls1))
 
 
 @pytest.mark.task0_3
